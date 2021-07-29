@@ -10,7 +10,7 @@ from models.cyclist import CyclistModel
 from models.maor_cyclist import MaorCyclist
 
 #Get cyclists from Maor's db - velodromeDB1
-SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://velodrome:iseuser2021@132.72.64.102:1433/velodromeDB1?driver=SQL+Server'
+# SQLALCHEMY_DATABASE_URI = *DB login details*
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 Session = sessionmaker()
 Session.configure(bind=engine)
@@ -21,7 +21,7 @@ df_Maor_cyclists['full_name'] = df_Maor_cyclists['first_name'] + " " + df_Maor_c
 df_Maor_cyclists['full_name'] = df_Maor_cyclists['full_name'].apply(lambda x :unidecode(x.lower()))
 
 #Get data base from final project db - velodromeDB
-SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://velodrome:iseuser2021@132.72.64.102:1433/velodromeDB?driver=SQL+Server'
+# SQLALCHEMY_DATABASE_URI = *DB login details*
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 Session = sessionmaker()
 Session.configure(bind=engine)
